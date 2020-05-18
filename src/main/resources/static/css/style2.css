@@ -1,0 +1,49 @@
+  body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+.sidebar ul{
+  list-style-type: none;
+  padding: 0px;
+}
+
+.sidebar ul li a {
+  padding: 26px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  color: #f1f1f1;
+}
+
+.tab-content {
+  margin-left: 350px; 
+  padding: 0px 10px;
+  margin-top: 100px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+ 
+.image1 { 
+   filter: invert(50%); 
+}
+.section {
+    width:350px;
+    float:left;
+    padding:10px;
+}

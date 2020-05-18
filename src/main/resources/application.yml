@@ -1,0 +1,24 @@
+spring:
+    datasource:
+        hikari:
+            connection-test-query: SELECT 1 FROM DUAL
+            minimum-idle: 1
+            maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/hotel_booking?serverTimezone=UTC&useLegacyDatetimeCode=false
+        username: root
+        password: root
+        initialization-mode: always
+
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+        jdbc:
+          time_zone = TimeZone
+
+# --- server
+server:
+  port: 8080
+
+

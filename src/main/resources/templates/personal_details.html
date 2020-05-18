@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title></title>
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+  <style>
+    	body{
+    		background: url("img/sea.jpg");
+  			height: 128vh;
+  			background-size: cover;
+  			background-position: center center; }
+    	}
+    </style>
+</head>
+<body>
+<div class="client-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 client-details-box" >
+        <div class="client-details-box-content" >
+          <h3>Client Personal Information</h3>
+          <a th:href="@{/customerDetails}" class="btn btn-lg btn-outline-info">See Your Details</a>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 client-details-box" >
+        <div class="client-details-box-content">
+          <h3>Client Itineraries Information</h3>
+          <a th:href="@{/itineraryDetails}" class="btn btn-lg btn-outline-info">See Your Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <table class="table">
+    <thead>
+    <tr style="color: white">
+      <th>ReferenceNumber</th>
+      <th>HotelName</th>
+      <th>Address</th>
+      <th>PhoneNumber</th>
+      <th>CheckInDate</th>
+      <th>CheckOutDate</th>
+      <th>Price</th>
+      <th>TypeOfRoom</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="itinerary:${itineraries}" style="color: white">
+      <td th:text="${itinerary.getReferenceNumber()}"></td>
+      <td th:text="${itinerary.getHotelName()}"></td>
+      <td th:text="${itinerary.getAddress()}"></td>
+      <td th:text="${itinerary.getPhone()}"></td>
+      <td th:text="${itinerary.getCheck_in_date()}"></td>
+      <td th:text="${itinerary.getCheck_out_date()}"></td>
+      <td th:text="${itinerary.getPrice()}"></td>
+      <td th:text="${itinerary.getRoomType()}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <table class="table">
+    <thead>
+    <tr style="color: white">
+      <th>customer_id</th>
+      <th>firstName</th>
+      <th>lastName</th>
+      <th>phoneNumber</th>
+      <th>dataOfBirth</th>
+      <th>sex</th>
+      <th>email</th>
+      <th>referenceNumber</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer:${customers}" style="color: white">
+      <td th:text="${customer.getCustomer_id()}"></td>
+      <td th:text="${customer.getFirstName()}"></td>
+      <td th:text="${customer.getLastName()}"></td>
+      <td th:text="${customer.getPhoneNumber()}"></td>
+      <td th:text="${customer.getDataOfBirth()}"></td>
+      <td th:text="${customer.getSex()}"></td>
+      <td th:text="${customer.getEmail()}"></td>
+      <td th:text="${customer.getReferenceNumber()}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="js/jquery-3.5.1.min.js"></script>
+</body>
+</html>

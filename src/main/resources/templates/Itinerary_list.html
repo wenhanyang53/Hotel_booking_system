@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+
+	<style>
+		.table{ 
+			  
+			background-color: #F5F5F5; 
+			overflow: none;"
+		}
+	</style>
+</head>
+<body>
+<table cellpadding="0px" cellspacing="0px" class="table table-bordered" align="center">
+<thead>
+<h3 align="center">List of Data</h3>
+<tr><a href="#"><button type="button" class="btn btn-primary">Add New</button></a></tr>
+<tr>
+	<th>Reference Number</th>
+	<th>Customer Id</th>
+	<th>Hotel Name</th>
+	<th>Address</th>
+	<th>Phone</th>
+	<th>Check In Date</th>
+	<th>Check Out Date</th>
+	<th>Price</th>
+	<th>Room Type</th>
+	<th>Action</th>
+</tr>
+
+<tr th:each="itinerary:${itineraries}">
+	<td th:text="${itinerary.getReferenceNumber()}"></td>
+	<td th:text="${itinerary.getCustomer_id()}"></td>
+	<td th:text="${itinerary.getHotelName()}"></td>
+	<td th:text="${itinerary.getAddress()}"></td>
+	<td th:text="${itinerary.getPhone()}"></td>
+	<td th:text="${itinerary.getCheck_in_date()}"></td>
+	<td th:text="${itinerary.getCheck_out_date()}"></td>
+	<td th:text="${itinerary.getPrice()}"></td>
+	<td th:text="${itinerary.getRoomType()}"></td>
+	<td>
+		<a th:href="@{/itinerary/}+${itinerary.getReferenceNumber()}" class="btn btn-success">Update</a>
+		<a th:href="@{/deleteItinerary/}+${itinerary.getReferenceNumber()}" class="btn btn-danger">Delete</a>
+	</td>
+</tr>
+</thead>
+</table>
+
+</body>
+</html>
